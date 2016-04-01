@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		F60EAF971CADEC2900E9168A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EAF961CADEC2900E9168A /* AppDelegate.swift */; };
-		F60EAF991CADEC2900E9168A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EAF981CADEC2900E9168A /* ViewController.swift */; };
+		F60EAF991CADEC2900E9168A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EAF981CADEC2900E9168A /* CollectionViewController.swift */; };
 		F60EAF9C1CADEC2900E9168A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60EAF9A1CADEC2900E9168A /* Main.storyboard */; };
 		F60EAF9E1CADEC2900E9168A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60EAF9D1CADEC2900E9168A /* Assets.xcassets */; };
 		F60EAFA11CADEC2900E9168A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60EAF9F1CADEC2900E9168A /* LaunchScreen.storyboard */; };
+		F60EAFA91CADF09700E9168A /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EAFA81CADF09700E9168A /* Cell.swift */; };
+		F60EAFAB1CAE503D00E9168A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EAFAA1CAE503D00E9168A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F60EAF931CADEC2900E9168A /* CollViewSimpleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollViewSimpleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60EAF961CADEC2900E9168A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F60EAF981CADEC2900E9168A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F60EAF981CADEC2900E9168A /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		F60EAF9B1CADEC2900E9168A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F60EAF9D1CADEC2900E9168A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60EAFA01CADEC2900E9168A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60EAFA21CADEC2900E9168A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F60EAFA81CADF09700E9168A /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		F60EAFAA1CAE503D00E9168A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				F60EAF961CADEC2900E9168A /* AppDelegate.swift */,
-				F60EAF981CADEC2900E9168A /* ViewController.swift */,
+				F60EAF981CADEC2900E9168A /* CollectionViewController.swift */,
 				F60EAF9A1CADEC2900E9168A /* Main.storyboard */,
 				F60EAF9D1CADEC2900E9168A /* Assets.xcassets */,
 				F60EAF9F1CADEC2900E9168A /* LaunchScreen.storyboard */,
 				F60EAFA21CADEC2900E9168A /* Info.plist */,
+				F60EAFA81CADF09700E9168A /* Cell.swift */,
+				F60EAFAA1CAE503D00E9168A /* DetailViewController.swift */,
 			);
 			path = CollViewSimpleSwift;
 			sourceTree = "<group>";
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F60EAF991CADEC2900E9168A /* ViewController.swift in Sources */,
+				F60EAF991CADEC2900E9168A /* CollectionViewController.swift in Sources */,
 				F60EAF971CADEC2900E9168A /* AppDelegate.swift in Sources */,
+				F60EAFA91CADF09700E9168A /* Cell.swift in Sources */,
+				F60EAFAB1CAE503D00E9168A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +259,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollViewSimpleSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chuckmoji.CollViewSimpleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -262,6 +271,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollViewSimpleSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chuckmoji.CollViewSimpleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,6 +297,7 @@
 				F60EAFA71CADEC2900E9168A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
