@@ -16,19 +16,19 @@ struct ImageData {
 class Cell: UICollectionViewCell {
 
     class SelectedCellBackground: UIView {
-        override func drawRect(rect: CGRect) {
+        override func draw(_ rect: CGRect) {
             let aRef = UIGraphicsGetCurrentContext()
-            CGContextSaveGState(aRef)
+            aRef?.saveGState()
             let bezierPath = UIBezierPath(roundedRect: rect, cornerRadius:5.0)
             bezierPath.lineWidth = 5.0
-            UIColor.blackColor().setStroke()
+            UIColor.black.setStroke()
 
             let fillColor = UIColor(red:0.529, green:0.808, blue:0.922, alpha:1) // color equivalent is #87ceeb
             fillColor.setFill()
 
             bezierPath.stroke()
             bezierPath.fill()
-            CGContextRestoreGState(aRef)
+            aRef?.restoreGState()
         }
     }
 

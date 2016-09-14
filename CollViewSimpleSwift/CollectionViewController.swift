@@ -13,23 +13,23 @@ class CollectionViewController: UICollectionViewController {
     static let kCellId = "cellID"
 
     @objc
-    override func collectionView(collectionView: UICollectionView,
+    override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         return 32
     }
 
-    func getImageData(indexPath: NSIndexPath, suffix: String = "") -> ImageData {
-        let label = "{\(indexPath.row) ,\(indexPath.section)}"
-        let imageToLoad = "\(indexPath.row)\(suffix)"
+    func getImageData(_ indexPath: IndexPath, suffix: String = "") -> ImageData {
+        let label = "{\((indexPath as NSIndexPath).row) ,\((indexPath as NSIndexPath).section)}"
+        let imageToLoad = "\((indexPath as NSIndexPath).row)\(suffix)"
         let image = UIImage(named: imageToLoad)
         return ImageData(image: image!, label: label)
     }
 
-    override func collectionView(collectionView: UICollectionView,
-                                 cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: Cell =
-            collectionView.dequeueReusableCellWithReuseIdentifier(CollectionViewController.kCellId,
-                                                                  forIndexPath: indexPath) as! Cell
+            collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewController.kCellId,
+                                                                  for: indexPath) as! Cell
 
         let imageData = getImageData(indexPath)
         cell.label.text = imageData.label
@@ -37,13 +37,13 @@ class CollectionViewController: UICollectionViewController {
         return cell
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         if (segue.identifier == "showDetail") {
-            let indexPath = collectionView?.indexPathsForSelectedItems()![0]
+            let indexPath = collectionView?.indexPathsForSelectedItems![0]
             let imageData = getImageData(indexPath!, suffix: "_full")
 
-            let detailView = segue.destinationViewController as! DetailViewController
+            let detailView = segue.destination as! DetailViewController
             detailView.imageData = imageData
         }
     }

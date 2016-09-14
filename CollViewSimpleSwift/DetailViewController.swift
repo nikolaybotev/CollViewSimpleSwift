@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var navItem: UINavigationItem!
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         imageView.image = imageData.image
         navItem.title = imageData.label
